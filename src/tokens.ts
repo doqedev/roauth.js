@@ -6,7 +6,14 @@ type error = {
   error_description: string
 }
 
+function validateSecret(secret: string){
+  return `${secret}`.startsWith('RBX-')
+}
+
+
 export function revoke(refreshTokenOrResponse: string | KeyResponse, clientId: string, clientSecret: string): Promise<void | error>{
+  if(!validateSecret(clientSecret)) throw new Error("Invalid client secret");
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded")
 
@@ -37,6 +44,8 @@ export function revoke(refreshTokenOrResponse: string | KeyResponse, clientId: s
 }
 
 export function refresh(refreshTokenOrResponse: string | KeyResponse, clientId: string, clientSecret: string): Promise<KeyResponse> {
+  if(!validateSecret(clientSecret)) throw new Error("Invalid client secret");
+  
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded")
 
@@ -71,6 +80,8 @@ export function refresh(refreshTokenOrResponse: string | KeyResponse, clientId: 
 }
 
 export function make(code: string, clientId: string, clientSecret: string): Promise<KeyResponse> {
+  if(!validateSecret(clientSecret)) throw new Error("Invalid client secret");
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/x-www-form-urlencoded")
 
