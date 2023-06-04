@@ -1,3 +1,11 @@
+# RoAuth.JS
+
+![npm](https://img.shields.io/npm/v/roauth.js)
+
+RoAuthJS, a simple promise-based node library.
+
+## Disclaimers
+
 **As of now, ROBLOX's OAuth system is currently open to alpha-testers and people with Verified IDs**
 
 This is super WIP as I only started working on it a few days ago! Just a basic API wrapper.
