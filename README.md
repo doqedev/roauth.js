@@ -19,7 +19,7 @@ This is also my first project in typescript, so it may not be as good as you'd e
 No secret is required.
 
 ```js
-const roauth = require("roauth.js");
+const RoAuthJS = require("roauth.js");
 const { ResponseType } = require("roauth.js");
 const express = require("express");
 
