@@ -2,12 +2,12 @@ import * as tokensLib from './tokens'
 import * as userLib from './user'
 
 export type KeyResponse = {
-  access_token: string,
-  refresh_token: string,
-  token_type: string,
-  expires_in: number,
-  id_token: string,
-  scopes: string[]
+    access_token: string,
+    refresh_token: string,
+    token_type: string,
+    expires_in: number,
+    id_token: string,
+    scopes: string[]
 }
 
 
@@ -52,11 +52,11 @@ type AuthFlowOptions = {
     RedirectURI: string,
     Scopes: string[],
     ResponseType: ResponseType,
-    Prompt: Prompt,
-    Nonce: number,
-    State: string,
-    CodeChallenge: string,
-    CodeChallengeMethod: string
+    Prompt?: Prompt,
+    Nonce?: number,
+    State?: string,
+    CodeChallenge?: string,
+    CodeChallengeMethod?: string
 }
 
 export function makeAuthLink(options: AuthFlowOptions) {
