@@ -48,7 +48,7 @@ export enum ResponseType {
 }
 
 type AuthFlowOptions = {
-    ClientId: number,
+    ClientId: number | string,
     RedirectURI: string,
     Scopes: string[],
     ResponseType: ResponseType,
